@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Download</title>
+  <script>
+    function redirect() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/vn/app/facebook/"; // Thay thế bằng liên kết App Store của bạn
+      } else if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.facebook.katana&hl=vi&pli=1"; // Thay thế bằng liên kết Google Play của bạn
+      } else {
+        window.location.href = "https://www.yourwebsite.com"; // Thay thế bằng URL trang web của bạn
+      }
+    }
+    window.onload = redirect;
+  </script>
+</head>
+<body>
+  <h1>Redirecting to App Store...</h1>
+</body>
+</html>
